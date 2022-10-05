@@ -1,0 +1,4 @@
+__pycache__
+bert-large-portuguese-cased
+distiluse-base-multilingual-cased-v1
+src/credentials.py
