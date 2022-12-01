@@ -25,10 +25,10 @@ def classifier(df):
     label = []
 
     for i in range(0, len(df)):
+        os.system('cls')
         print(df['text'][i])
         category = input()
         label.append(category)
-        os.system('cls')
         
     return label
 
@@ -40,10 +40,17 @@ client = tweepy.Client( bearer_token=credentials.bearer_token,
                         return_type = requests.Response,
                         wait_on_rate_limit=True)
 
-topics = ['candidato']
+topics = ['teste']
+
+
+labeling = True
 
 for topic in topics:
-    df = getData(topic, 100)
-    label = classifier(df)
-    df['label'] = label
-    df.to_csv(topic + '.csv',index=False)
+    df = getData(queryTopic = topic, max_results = 10)
+    if(labeling == True):
+        label = classifier(df)
+        df['label'] = label
+        df.to_csv('data/classifier/' + topic + '.csv',index=False)
+    else:
+        df['topic'] = topic
+        df.to_csv('data/topic/' + topic + '.csv',index=False)   
