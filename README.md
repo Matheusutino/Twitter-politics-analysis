@@ -4,7 +4,7 @@ This project was developed during the course "[SCC0634] Applications of Artifici
 
 # Methods
 
-## Data collection and classification
+## Data collection
 
 One thing I had never done before was actually obtain all the data used and also classify it manually. To have this experience, I used the tweepy package to access the API and classified the data in the file "getData.py".
 
