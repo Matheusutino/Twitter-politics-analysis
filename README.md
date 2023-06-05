@@ -12,11 +12,21 @@ One thing I had never done before was actually obtain all the data used and also
 
 In this stage, several aspects were analyzed to understand the behavior of the data and evaluate its quality. It was checked for null values, the number of data points, the number of words per text, the quantity of each class, and also a word cloud was created with the most frequent words.
 
+![WordCloud](images/wordCloud.png)
+
 ## Preprocessing
 
 In practice, this step was not necessary as BERT was used, which does not require data preprocessing. However, for didactic purposes, this step was performed.
 
 Instances with undesired classes, emojis, '@' and '#', as well as 'http' were removed. Everything was also converted to lowercase. In this case, other preprocessing steps could have been performed, but that was not the objective of this project.
+
+## Topics
+
+Furthermore, the BERT topic was also used to cluster the texts into topics in an unsupervised manner. The result was not as satisfactory as desired, as it requires good preprocessing to work excellently. This involves removing essentially all terms that are not important or relevant to the analyzed topic.
+
+Nevertheless, it is possible to synthesize the topics into a graph, as shown below.
+
+![BertTopic](images/bertTopic.png)
 
 ## Classification
 
